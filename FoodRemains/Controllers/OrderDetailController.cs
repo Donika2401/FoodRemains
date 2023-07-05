@@ -126,8 +126,7 @@ namespace FoodRemains.Controllers
 
         public void SendSMS(string phoneNo,string orderMessage)
         {
-            string accountSid = "ACa270f27186d164290fb659d2c6ebc069";
-            string authToken = "67aaf69aa8f5467d6ff3fff6f8b9a380";
+            
 
             TwilioClient.Init(accountSid, authToken);
 
