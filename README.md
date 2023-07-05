@@ -1,6 +1,6 @@
-# FoodRemains
+# FreeFeeds
 
-Foodremains is an online platform which helps to reduce food waste from restaurants. 
+FreeFeeds is an online platform which helps to reduce food waste from restaurants. 
 The idea is to create a web app which lets the restaurants to list their food items along with their quantity. 
 It’ll have a login for the restaurants. The user can select the items they want and order it online for free and pick it up from the restaurant.
 
