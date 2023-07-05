@@ -1,0 +1,76 @@
+﻿@model IEnumerable<FoodRemains.Models.RestaurantMaster>
+
+@{
+    ViewBag.Title = "Restaurant";
+}
+
+<h2>List of Restaurants</h2>
+
+<p>
+    @Html.ActionLink("Add Restaurant", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RestaurantName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpeningHour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClosingHour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvailableService)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cuisine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerMaster.FirstName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RestaurantName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpeningHour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClosingHour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvailableService)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cuisine)
+        </td>
+        <td>
+            @*.@Html.DisplayFor(modelItem => item.Photo)*@
+            <img src="/RestaurantImages/@item.Photo" alt="" height=100 width=150 />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerMaster.FirstName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RestaurantID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RestaurantID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RestaurantID })
+        </td>
+    </tr>
+}
+
+</table>

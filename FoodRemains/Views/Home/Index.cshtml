@@ -1,0 +1,75 @@
+﻿@model IEnumerable<FoodRemains.Models.PostFoodMaster>
+
+<section class="home-index-slider slider-arrow slider-dots">
+    <div class="banner-part banner-1">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 col-lg-6">
+                    <div class="banner-content">
+                        <h1>Be the reason someone smiles today.</h1>
+                        <p>
+                            Welcome to FreeFeeds.com. Where we believe that everyone deserves their share of food. Our goal is to provide food to the needy and eradicate the world hunger and at the same time reduce food waste and save the environment and humanity from the hazardous FOOD WASTE. <br />Order you favourite food from your favourite restaurants for FREE! Please order only as much needed.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="banner-img"><img src="~/Content/assets/images/smile.jpg" alt="index"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="banner-part banner-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 col-lg-6">
+                    <div class="banner-img"><img src="~/Content/assets/images/betterworld.jpg" alt="index"></div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="banner-content">
+                        <h1>Let's Build a Better World Together!</h1>
+                        <p>
+                            Welcome to FreeFeeds.com! Stopping climate change and protecting the environment are among the greatest challenges of our time, and food waste is a major contributor to both of these issues. Do you know that when food ends up in a landfill, it creates methane, a greenhouse gas 25 times more potent than carbon dioxide. In fact, if global food waste were measured as a country, it would be the world’s third worst emitter of greenhouse gases.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section feature-part">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>All Food Posts</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2">
+            @foreach (var item in Model)
+            {
+                <div class="col">
+                    <div class="feature-card">
+                        <div class="feature-media">
+                            <a class="feature-image" href="#">
+                                <img src="/RestaurantImages/@item.Photo" alt=""/>
+                            </a>
+                        </div>
+                        <div class="feature-content">
+                            <h4 class="feature-name"><a href="#">@Html.DisplayFor(modelItem => item.FoodItem)</a></h4>
+                            <h6 class="feature-price"><span>Available Quantity: <small>@Html.DisplayFor(modelItem => item.Quantity)</small></span></h6>
+                            <h6 class="feature-price"><span>Serves: <small>@Html.DisplayFor(modelItem => item.ServesPerson) person(s)</small></span></h6>
+                            <p class="feature-desc">
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </p>
+
+                            <button title="Place Order" onclick="location.href='@Url.Action("Create", "OrderDetail", new { restaurantID = @item.RestaurantID, postedFoodID = @item.PostedFoodID, quantity = @item.Quantity})'" style="width: 100%;font-size: 15px;padding: 6px 0px;border-radius: 6px;text-align: center;text-transform: capitalize;color: var(--heading);background: var(--border);display: flex;align-items: center;justify-content: center;">
+                                <i class="fas fa-shopping-basket"></i><span>  Place Order</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

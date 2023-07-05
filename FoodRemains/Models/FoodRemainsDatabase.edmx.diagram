@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="189df9f189ff4975a897f6930b0a4490" Name="Diagram1">
+        <EntityTypeShape EntityType="FoodRemainsModel.FAQMaster" Width="1.5" PointX="1.375" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodRemainsModel.FeedbackMaster" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodRemainsModel.OrderDetail" Width="1.5" PointX="7.375" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodRemainsModel.OwnerMaster" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodRemainsModel.PostFoodMaster" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodRemainsModel.RestaurantMaster" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodRemainsModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodRemainsModel.UserLogDetail" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="FoodRemainsModel.FK_FeedbackMaster_RestaurantMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodRemainsModel.FK_OrderDetails_PostFoodMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodRemainsModel.FK_OrderDetails_RestaurantMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodRemainsModel.FK_RestaurantMaster_OwnerMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodRemainsModel.FK_UserLogDetails_OwnerMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodRemainsModel.FK_PostFoodMaster_RestaurantMaster" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

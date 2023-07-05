@@ -1,0 +1,121 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Free Feeds</title>
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="~/fonts/flaticon/flaticon.css">
+    <link rel="stylesheet" href="~/fonts/icofont/icofont.min.css">
+    <link rel="stylesheet" href="~/fonts/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="~/Content/assets/vendor/venobox/venobox.min.css">
+    <link rel="stylesheet" href="~/Content/assets/vendor/slickslider/slick.min.css">
+    <link rel="stylesheet" href="~/Content/assets/vendor/niceselect/nice-select.min.css">
+    <link rel="stylesheet" href="~/Content/assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/main.css">
+    <link rel="stylesheet" href="~/Content/assets/css/index.css">
+    <link rel="stylesheet" href="~/Content/assets/css/user-auth.css">
+
+</head>
+
+<body>
+
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-5">
+                    <div class="header-top-welcome">
+                        <p>It's all about giving...! Welcome to FreeFeeds.com!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar-part">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="navbar-content">
+                        <ul class="navbar-list">
+                            <li><img src="~/Content/assets/images/free-feeds.png" width="180" height="70"></li>
+                            @*@Html.ActionLink("Food Remains", "Index", "Home", new { @class = "navbar-link" })*@
+
+                            @if (HttpContext.Current.Session["userrole"] == null)
+                            {
+                                <li class="navbar-item dropdown">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "navbar-link" })</li>
+                                @*<li class="navbar-item dropdown">@Html.ActionLink("Log In", "Index", "LogIn", null, new { @class = "navbar-link" })</li>*@
+                                <li class="navbar-item dropdown">@Html.ActionLink("Food Near Me", "Index", "FoodNearMe", null, new { @class = "navbar-link" })</li>
+                                <li class="navbar-item dropdown">@Html.ActionLink("Top Donors", "Index", "TopDonors", null, new { @class = "navbar-link" })</li>
+                                <li class="navbar-item dropdown">@Html.ActionLink("About Us", "About", "Home", null, new { @class = "navbar-link" })</li>
+                                <li class="navbar-item dropdown">@Html.ActionLink("Blog", "Index", "Blog", null, new { @class = "navbar-link" })</li>
+                                <li class="navbar-item dropdown">@Html.ActionLink("FAQs", "Index", "FAQMaster", null, new { @class = "navbar-link" })</li>
+                                <li class="navbar-item dropdown">@Html.ActionLink("Feedback", "Create", "FeedbackMaster", null, new { @class = "navbar-link" })</li>
+                            }
+                            @if (HttpContext.Current.Session["userrole"] != null)
+                            {
+                                <li class="navbar-item dropdown">@Html.ActionLink("Restaurant Detail", "Index", "RestaurantMaster", null, new { @class = "navbar-link" })</li>
+                                <li class="navbar-item dropdown">@Html.ActionLink("Post Food", "Index", "PostFoodMaster", null, new { @class = "navbar-link" })</li>
+                                <li class="navbar-item dropdown">@Html.ActionLink("Orders", "Index", "OrderDetail", null, new { @class = "navbar-link" })</li>
+                                <li class="navbar-item dropdown">@Html.ActionLink("Feedback", "Index", "FeedbackMaster", null, new { @class = "navbar-link" })</li>
+                                @*<li class="navbar-item dropdown">@Html.ActionLink("Log Out", "Logout", "LogIn", null, new { @class = "navbar-link" })</li>*@
+                            }
+                        </ul>
+                        @if (HttpContext.Current.Session["userrole"] == null)
+                        {
+                            <div class="navbar-info-group">
+                                <div class="navbar-info">
+                                    <i class="icofont-login"></i>
+                                    <p><span><button>@Html.ActionLink("Log In", "Index", "LogIn", null, new { @class = "" })</button></span></p>
+                                </div>
+                            </div>
+                        }
+                        @if (HttpContext.Current.Session["userrole"] != null)
+                        {
+                            <div class="navbar-info-group">
+                                <div class="navbar-info">
+                                    <i class="icofont-logout"></i>
+                                    <p><span><button>@Html.ActionLink("Log Out", "Logout", "LogIn", null, new { @class = "" })</button></span></p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    @RenderBody()
+    <div class="row">
+        <div class="col-12">
+            <div class="footer-bottom">
+                <p class="footer-copytext">Copyright &copy; @DateTime.Now.Year, All rights reserved - FoodRemains.com</p>
+            </div>
+        </div>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+
+    <script src="~/Content/assets/vendor/bootstrap/jquery-1.12.4.min.js"></script>
+    <script src="~/Content/assets/vendor/bootstrap/popper.min.js"></script>
+    <script src="~/Content/assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="~/Content/assets/vendor/countdown/countdown.min.js"></script>
+    <script src="~/Content/assets/vendor/niceselect/nice-select.min.js"></script>
+    <script src="~/Content/assets/vendor/slickslider/slick.min.js"></script>
+    <script src="~/Content/assets/vendor/venobox/venobox.min.js"></script>
+    <script src="~/Scripts/js/nice-select.js"></script>
+    <script src="~/Scripts/js/countdown.js"></script>
+    <script src="~/Scripts/js/accordion.js"></script>
+    <script src="~/Scripts/js/venobox.js"></script>
+    <script src="~/Scripts/js/slick.js"></script>
+    <script src="~/Scripts/js/main.js"></script>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

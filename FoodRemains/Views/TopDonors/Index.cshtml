@@ -1,0 +1,58 @@
+﻿@model IEnumerable<FoodRemains.Models.RestaurantMaster>
+
+<section class="inner-section">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section-heading">
+                    <h2>Our Top Donors</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+        @foreach (var item in Model)
+        {
+            <div class="col">
+                <div class="product-card">
+                    <div class="product-media">
+                        <a class="product-image"
+                           href="#"><img src="/RestaurantImages/@item.Photo" alt="" height=130 width=150 /></a>
+                        <div class="product-widget">
+                        </div>
+                    </div>
+
+                    <div class="product-content">
+                        <div class="product-rating">
+                            @*<i class="active icofont-star"></i><i class="active icofont-star"></i><i class="active icofont-star"></i><i class="active icofont-star"></i><i class="icofont-star"></i><a href="product-video.html">(3)</a>*@
+                        </div>
+                        <h6 class="product-name">  @Html.DisplayFor(modelItem => item.RestaurantName)</h6>
+
+                        <h6 class="product-price">Location: @Html.DisplayFor(modelItem => item.Location)</h6>
+
+                        <h6 class="product-price">Services: @Html.DisplayFor(modelItem => item.AvailableService)</h6>
+                        <h6 class="product-rating">Cuisine: @Html.DisplayFor(modelItem => item.Cuisine)</h6>
+                        <h6 class="product-price">Open Hours: @Html.DisplayFor(modelItem => item.OpeningHour) - @Html.DisplayFor(modelItem => item.ClosingHour)</h6>
+
+
+                        @*<button class="product-add" title="View"  onclick="window.location.href = ' ' +@item.Website">
+                                <span>View Restaurant</span>
+                            </button>*@
+                        <input class="product-add" type="button" value="View Restaurant" onclick="window.open('@item.Website')" />
+                    </div>
+                </div>
+            </div>
+        }
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-btn-25">
+                    @*<a href="shop-4column.html" class="btn btn-outline">
+                            <i class="fas fa-eye"></i><span>view all related</span>
+                        </a>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

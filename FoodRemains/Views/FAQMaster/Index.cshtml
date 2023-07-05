@@ -1,0 +1,43 @@
+﻿@model IEnumerable<FoodRemains.Models.FAQMaster>
+
+<head>
+    <link rel="stylesheet" href="~/Content/assets/css/faq.css">
+</head>
+@{
+    ViewBag.Title = "FAQs";
+}
+
+@*<h2>Index</h2>*@
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+
+<section class="inner-section single-banner" style="background: url(../../Content/assets/images/faq-banner.jpg) no-repeat center;">
+    <div class="container">
+        <h2>faq<small>s</small></h2>
+    </div>
+</section>
+<section class="inner-section faq-part">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="faq-parent">
+
+                   @foreach (var item in Model)
+                    {
+
+                        <div class="faq-child">
+                            <div class="faq-que"><button>@Html.DisplayFor(modelItem => item.Question)</button></div>
+                            <div class="faq-ans">
+                                <p>
+                                    @Html.DisplayFor(modelItem => item.Answer)
+                                </p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

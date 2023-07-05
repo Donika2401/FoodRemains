@@ -1,0 +1,142 @@
+﻿@model FoodRemains.Models.OwnerMaster
+@{
+    ViewBag.Title = "Register";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="template" content="greeny">
+    <meta name="title" content="greeny - Ecommerce Food Store HTML Template">
+    <meta name="keywords"
+          content="organic, food, shop, ecommerce, store, html, bootstrap, template, agriculture, vegetables, products, farm, grocery, natural, online">
+    <title>Free Feeds - Register</title>
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="~/fonts/flaticon/flaticon.css">
+    <link rel="stylesheet" href="~/fonts/icofont/icofont.min.css">
+    <link rel="stylesheet" href="~/fonts/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="~/Content/assets/vendor/venobox/venobox.min.css">
+    <link rel="stylesheet" href="~/Content/assets/vendor/slickslider/slick.min.css">
+    <link rel="stylesheet" href="~/Content/assets/vendor/niceselect/nice-select.min.css">
+    <link rel="stylesheet" href="~/Content/assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/main.css">
+    <link rel="stylesheet" href="~/Content/assets/css/user-auth.css">
+</head>
+
+<body>
+    <div class="user-form-logo">
+        <a href="/Home">
+            <img src="~/Content/assets/images/free-feeds.png" alt="logo" style="height:120px; width:300px">
+        </a>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal w-50 justify-content-center align-content-center container user-form-card">
+            <h4>Register</h4>
+            <hr />
+            @if (@TempData["message"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" id="success-alert" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+                    <strong>@TempData["message"]</strong>
+                </div><br />
+            }
+            <form class="user-form w-50 justify-content-center">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "First Name" } })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", placeholder = "Last Name" } })
+                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EmailID, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.EmailID, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter your email address xxx@email.com", type="email" } })
+                        @Html.ValidationMessageFor(model => model.EmailID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ContactNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ContactNo, new { htmlAttributes = new { @class = "form-control", placeholder = "xxx-xxx-xxxx" } })
+                        @Html.ValidationMessageFor(model => model.ContactNo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Minimum 5 characters", type = "password" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.BusinessName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.BusinessName, new { htmlAttributes = new { @class = "form-control", placeholder = "Your business Name" } })
+                        @Html.ValidationMessageFor(model => model.BusinessName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Website, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Website, new { htmlAttributes = new { @class = "form-control", placeholder = "Your website" } })
+                        @Html.ValidationMessageFor(model => model.Website, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" hidden>
+                    @Html.LabelFor(model => model.IsAdmin, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox btn btn-secondary">
+                            @Html.EditorFor(model => model.IsAdmin)
+                            @Html.ValidationMessageFor(model => model.IsAdmin, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Register" class="btn btn-default" />
+                    </div>
+                </div>
+
+                <div class="user-form-remind">
+                    <p>
+                        Already Registered?
+                        @Html.ActionLink("Login Here", "Index", "LogIn", null, null)
+                    </p>
+                </div>
+            </form>
+
+        </div>
+        <div class="user-form-footer">
+            <p class="footer-copytext">Copyright &copy; @DateTime.Now.Year, All rights reserved - FoodRemains.com</p>
+        </div>
+    }
+</body>
+</html>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

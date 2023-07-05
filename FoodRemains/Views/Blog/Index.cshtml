@@ -1,0 +1,211 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model FoodRemains.Models.FeedbackMaster
+
+@{
+    ViewBag.Title = "Blog";
+}
+
+@*<h2>Create</h2>*@
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <section class="inner-section single-banner" style="background: url(/Content/assets/images/blog/blog-banner.jpg) no-repeat center;">
+        <div class="container">
+            <h2>Blog</h2>
+        </div>
+    </section>
+    <section class="inner-section about-company">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="about-content">
+                    <h4 style="font-style:italic;">
+                        Our mission is to feed people not the landfills. With the use of technology and innovation free feeds is hoping to solve the most prevalant
+                        problem that needs to be addressed.
+                    </h4>
+                    <div class="green_underline small expand" style="height:20px; background:url(/Content/assets/images/about/green_underline_small.png) no-repeat center "></div>
+                </div>
+                <br />
+            </div>
+        </div>
+    </section>
+    <section class="inner-section blog-grid">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6">
+                            <div class="blog-card">
+                                <div class="blog-media">
+                                    <a class="blog-img" href="#">
+                                        <img src="~/Content/assets/images/blog_icon.png"
+                                             alt="blog" style="height:35px; width:35px">
+                                    </a>
+                                </div>
+                                <div class="blog-content">
+
+                                    <h4 class="blog-title">
+                                        <a href="https://hartlepoolfoodnetwork.org/blog/food-waste-causes-what-we-can-do" target="_blank">
+                                            Food Waste: The causes and what we can do about it.
+                                        </a>
+                                    </h4>
+                                    <p class="blog-desc">
+                                        The problem of food waste is a huge issue that isn’t going away. It is estimated
+                                        that 33-50% of food produced globally is never eaten, and it occurs at all four stages
+                                        of the food supply chain. So, why does it happen and what can we do about it?..
+                                    </p><a class="blog-btn"
+                                           href="https://hartlepoolfoodnetwork.org/blog/food-waste-causes-what-we-can-do" target="_blank"><span>read more</span><i class="icofont-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="blog-card">
+                                <div class="blog-media">
+                                    <a class="blog-img" href="#">
+                                        <img src="~/Content/assets/images/blog_icon.png"
+                                             alt="blog" style="height:35px; width:35px">
+                                    </a>
+                                </div>
+                                <div class="blog-content">
+
+                                    <h4 class="blog-title">
+                                        <a href="https://www.lovefoodhatewaste.com/blog/" target="_blank">
+                                            Take Action Against The Problem Of Food Waste
+                                        </a>
+                                    </h4>
+                                    <p class="blog-desc">
+                                        Here you can find our Love Food Hate Waste blogs, written to share top tips and solutions to reduce food waste at home. Feeding mouths not bins, one blog at a time! ...
+                                    </p><a class="blog-btn"
+                                           href="https://www.lovefoodhatewaste.com/blog/" target="_blank"><span>read more</span><i class="icofont-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="blog-card">
+                                <div class="blog-media">
+                                    <a class="blog-img" href="#">
+                                        <img src="~/Content/assets/images/blog_icon.png"
+                                             alt="blog" style="height:35px; width:35px">
+                                    </a>
+                                </div>
+                                <div class="blog-content">
+
+                                    <h4 class="blog-title">
+                                        <a href="https://sites.psu.edu/lyricalbreakdown/2021/04/22/food-waste/" target="_blank">
+                                            The issue of food waste is not a new one. While countries like the United States, waste billions ...
+                                        </a>
+                                    </h4>
+                                    <p class="blog-desc">
+                                        In the United States, about 30-40 percent of all the food production in theFarm To Landfill: The Cost Of Food Waste In America | HuffPost Life country is wasted. In 2010, it was found that about 31 percent of food loss was estimated to be around 133 billion pounds.
+                                    </p><a class="blog-btn"
+                                           href="https://sites.psu.edu/lyricalbreakdown/2021/04/22/food-waste/" target="_blank"><span>read more</span><i class="icofont-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="blog-card">
+                                <div class="blog-media">
+                                    <a class="blog-img" href="#">
+                                        <img src="~/Content/assets/images/blog_icon.png"
+                                             alt="blog" style="height:35px; width:35px">
+                                    </a>
+                                </div>
+                                <div class="blog-content">
+
+                                    <h4 class="blog-title">
+                                        <a href="https://www.rubicon.com/blog/food-waste-facts/" target="_blank">
+                                            Food Waste in America: Facts and Statistics
+                                        </a>
+                                    </h4>
+                                    <p class="blog-desc">
+                                        Food waste in America has skyrocketed in recent years, with 103 million tons (206 billion pounds) of food waste generated in 2018, according to the Environmental Protection Agency (EPA);
+                                    </p><a class="blog-btn"
+                                           href="https://www.rubicon.com/blog/food-waste-facts/" target="_blank"><span>read more</span><i class="icofont-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="blog-card">
+                                <div class="blog-media">
+                                    <a class="blog-img" href="#">
+                                        <img src="~/Content/assets/images/blog_icon.png"
+                                             alt="blog" style="height:35px; width:35px">
+                                    </a>
+                                </div>
+                                <div class="blog-content">
+
+                                    <h4 class="blog-title">
+                                        <a href="https://www.wastewiseproductsinc.com/blog/food-waste/" target="_blank">
+                                            6 Ways to Reduce Food Waste in Restaurants and Businesses
+                                        </a>
+                                    </h4>
+                                    <p class="blog-desc">
+                                        When running a food service business, generating profits relies on cutting excesses. Therefore, any technique that can trim costs will help the bottom line, including different ways to reduce food waste.
+                                    </p><a class="blog-btn"
+                                           href="https://www.wastewiseproductsinc.com/blog/food-waste/" target="_blank"><span>read more</span><i class="icofont-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="blog-card">
+                                <div class="blog-media">
+                                    <a class="blog-img" href="#">
+                                        <img src="~/Content/assets/images/blog_icon.png"
+                                             alt="blog" style="height:35px; width:35px">
+                                    </a>
+                                </div>
+                                <div class="blog-content">
+
+                                    <h4 class="blog-title">
+                                        <a href="https://www.gooroo.com/blog/food-waste/" target="_blank">
+                                            Food Waste: How to Reduce, Reuse, Recycle
+                                        </a>
+                                    </h4>
+                                    <p class="blog-desc">
+                                        The most contributing factor is over farming. Famers often plant more than there is demand for. Sometimes the cost of transport is higher than the price of the crop. Resulting in the produce going un-harvested.
+                                    </p><a class="blog-btn"
+                                           href="https://www.gooroo.com/blog/food-waste/" target="_blank"><span>read more</span><i class="icofont-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="blog-card">
+                                <div class="blog-media">
+                                    <a class="blog-img" href="#">
+                                        <img src="~/Content/assets/images/blog_icon.png"
+                                             alt="blog" style="height:35px; width:35px">
+                                    </a>
+                                </div>
+                                <div class="blog-content">
+
+                                    <h4 class="blog-title">
+                                        <a href="https://ucanr.edu/blogs/blogcore/postdetail.cfm?postnum=24623" target="_blank">
+                                            Food waste is an ethical and environmental issue
+                                        </a>
+                                    </h4>
+                                    <p class="blog-desc">
+                                        Summer brings an abundance of luscious and healthy fruits and vegetables. It's easy to buy more than we can eat, which sometimes results in #foodwaste.
+                                    </p><a class="blog-btn"
+                                           href="https://ucanr.edu/blogs/blogcore/postdetail.cfm?postnum=24623" target="_blank"><span>read more</span><i class="icofont-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

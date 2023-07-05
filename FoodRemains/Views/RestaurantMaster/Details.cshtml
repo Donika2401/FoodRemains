@@ -1,0 +1,83 @@
+﻿@model FoodRemains.Models.RestaurantMaster
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RestaurantMaster</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RestaurantName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RestaurantName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpeningHour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpeningHour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClosingHour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClosingHour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AvailableService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AvailableService)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuisine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cuisine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Photo)*@
+            <img src="/RestaurantImages/@Model.Photo" alt="" height=100 width=150 />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OwnerMaster.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OwnerMaster.FirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RestaurantID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
